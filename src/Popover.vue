@@ -1,5 +1,5 @@
 <template>
-  <span ref="trigger">
+  <div ref="trigger">
     <slot></slot>
     <transition :name="effect">
       <div ref="popover" v-if="show" :class="['popover',placement]">
@@ -8,7 +8,7 @@
         <div class="popover-content"><slot name="content"><span v-html="content"></span></slot></div>
       </div>
     </transition>
-  </span>
+  </div>
 </template>
 
 <script>
