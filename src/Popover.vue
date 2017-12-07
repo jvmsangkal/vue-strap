@@ -2,7 +2,7 @@
   <div ref="trigger">
     <slot></slot>
     <transition :name="effect">
-      <div ref="popover" v-if="show" :class="['popover',placement]">
+      <div ref="popover" v-show="show" :class="['popover',placement]">
         <div class="arrow"></div>
         <h3 class="popover-title" v-if="title"><slot name="title">{{title}}</slot></h3>
         <div class="popover-content"><slot name="content"><span v-html="content"></span></slot></div>
