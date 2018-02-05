@@ -2,7 +2,7 @@
   <span ref="trigger">
     <slot></slot>
     <transition :name="effect">
-      <div ref="popover" v-if="show" :class="['tooltip',placement]">
+      <div ref="popover" v-show="show" :class="['tooltip',placement]">
         <div class="tooltip-arrow"></div>
         <div class="tooltip-inner">
           <slot name="content"><div v-html="content"></div></slot>
