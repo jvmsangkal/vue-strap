@@ -9154,7 +9154,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9;\n}\n.fadein-enter {\n  animation:fadein-in 0.3s ease-in;\n}\n.fadein-leave-active {\n  animation:fadein-out 0.3s ease-out;\n}\n@keyframes fadein-in {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: .9;\n}\n}\n@keyframes fadein-out {\n0% {\n    opacity: .9;\n}\n100% {\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?472e8cc0"],"names":[],"mappings":";AA2BA;;;;EAIA,YAAA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,WAAA;CACA;AACA;IACA,YAAA;CACA;CACA;AACA;AACA;IACA,YAAA;CACA;AACA;IACA,WAAA;CACA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span ref=\"trigger\">\n    <slot></slot>\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" :class=\"['tooltip',placement]\">\n        <div class=\"tooltip-arrow\"></div>\n        <div class=\"tooltip-inner\">\n          <slot name=\"content\"><div v-html=\"content\"></div></slot>\n        </div>\n      </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    effect: {type: String, default: 'scale'},\n    trigger: {type: String, default: 'hover'}\n  }\n}\n</script>\n\n<style>\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9;\n}\n.fadein-enter {\n  animation:fadein-in 0.3s ease-in;\n}\n.fadein-leave-active {\n  animation:fadein-out 0.3s ease-out;\n}\n@keyframes fadein-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: .9;\n  }\n}\n@keyframes fadein-out {\n  0% {\n    opacity: .9;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9;\n}\n.fadein-enter {\n  animation:fadein-in 0.3s ease-in;\n}\n.fadein-leave-active {\n  animation:fadein-out 0.3s ease-out;\n}\n@keyframes fadein-in {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: .9;\n}\n}\n@keyframes fadein-out {\n0% {\n    opacity: .9;\n}\n100% {\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?b56f0c40"],"names":[],"mappings":";AA2BA;;;;EAIA,YAAA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,WAAA;CACA;AACA;IACA,YAAA;CACA;CACA;AACA;AACA;IACA,YAAA;CACA;AACA;IACA,WAAA;CACA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span ref=\"trigger\">\n    <slot></slot>\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-show=\"show\" :class=\"['tooltip',placement]\">\n        <div class=\"tooltip-arrow\"></div>\n        <div class=\"tooltip-inner\">\n          <slot name=\"content\"><div v-html=\"content\"></div></slot>\n        </div>\n      </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    effect: {type: String, default: 'scale'},\n    trigger: {type: String, default: 'hover'}\n  }\n}\n</script>\n\n<style>\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9;\n}\n.fadein-enter {\n  animation:fadein-in 0.3s ease-in;\n}\n.fadein-leave-active {\n  animation:fadein-out 0.3s ease-out;\n}\n@keyframes fadein-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: .9;\n  }\n}\n@keyframes fadein-out {\n  0% {\n    opacity: .9;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -9207,7 +9207,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "name": _vm.effect
 	    }
-	  }, [(_vm.show) ? _c('div', {
+	  }, [_c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.show),
+	      expression: "show"
+	    }],
 	    ref: "popover",
 	    class: ['tooltip', _vm.placement]
 	  }, [_c('div', {
@@ -9218,7 +9224,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.content)
 	    }
-	  })])], 2)]) : _vm._e()])], 2)
+	  })])], 2)])])], 2)
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
